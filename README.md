@@ -15,6 +15,6 @@ the script is very straight forward, you put the Players UserName (Script Doesn'
 2 Username
 3 UserId
 #### Humanoid
-1 WalkSpeed
-2 JumpPower
-3 MaxHealth
+WalkSpeed,
+JumpPower,
+MaxHealth,
