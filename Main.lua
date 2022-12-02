@@ -46,7 +46,7 @@ local Input = Tab:CreateInput({
 	PlaceholderText = "Player Name",
 	RemoveTextAfterFocusLost = false,
 	Callback = function(Text)
-		PlayerName = Text or PlayerName.DisplayName = Text
+		PlayerName = Text
 
 		if not Player:FindFirstChild(Text) then
 			Rayfield:Notify({
