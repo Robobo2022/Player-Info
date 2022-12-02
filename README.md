@@ -13,8 +13,8 @@ the script is very straight forward, you put the Players UserName (Script Doesn'
 #### Character
 Display,
 Username,
-UserId,
+UserId
 #### Humanoid
 WalkSpeed,
 JumpPower,
-MaxHealth,
+MaxHealth
