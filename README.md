@@ -10,11 +10,11 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/Player-In
 the script is very straight forward, you put the Players UserName (Script Doesn't support display name yet!) in the textinput and then switch The Information Tab.
 
 ### What Stats can you see?
-####Character
+#### Character
 1 Display
 2 Username
 3 UserId
-####Humanoid
+#### Humanoid
 1 WalkSpeed
 2 JumpPower
 3 MaxHealth
