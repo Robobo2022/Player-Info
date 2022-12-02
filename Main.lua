@@ -31,6 +31,11 @@ local Window = Rayfield:CreateWindow({
 local Tab = Window:CreateTab("Player", 11721661401)
 local Tab1 = Window:CreateTab("Information", 11721661401)
 
+local CharacterStats = Tab1:CreateSection("Character Stats")
+local Display = Tab1:CreateLabel("Display: ")
+local UserName = Tab1:CreateLabel("User: ")
+local UserId = Tab1:CreateLabel("UserId: ")
+local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
 local MaxHealth = Tab1:CreateLabel("MaxHealth: ")
@@ -50,6 +55,10 @@ local Input = Tab:CreateInput({
 				Duration = 6.5,
 				Image = 11721661420,
 			})
+
+            Display:Set("Display: Doesn't Exist")
+            UserName:Set("User: Doesn't Exist")
+            UserId:Set("UserId: Doesn't Exist")
 			WalkSpeed:Set("WalkSpeed: Doesn't Exist")
 			JumpPower:Set("JumpPower: Doesn't Exist")
 			MaxHealth:Set("MaxHealth: Doesn't Exist")
@@ -61,12 +70,14 @@ local Input = Tab:CreateInput({
 				Image = 11721661402,
 			})
 
+            UserName:Set("User: " .. PlayerName)
+            Display:Set("User: " .. Player[Text].DisplayName)
+            UserId:Set("User: " .. Player[Text].UserId)
 			WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
 			JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
 			MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)
 		end
 	end,
 })
-
 
 
