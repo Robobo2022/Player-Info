@@ -19,4 +19,4 @@ WalkSpeed,
 JumpPower,
 MaxHealth
 
-###### Its CaSE sensitive, so it will the player doesn't exist when you put one letter wrong or a capital letter wrong ):
+###### Its CaSe sensitive, so it will the player doesn't exist when you put one letter wrong or a capital letter wrong ):
