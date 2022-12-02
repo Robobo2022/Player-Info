@@ -11,9 +11,9 @@ the script is very straight forward, you put the Players UserName (Script Doesn'
 
 ### What Stats can you see?
 #### Character
-1 Display
-2 Username
-3 UserId
+Display,
+Username,
+UserId,
 #### Humanoid
 WalkSpeed,
 JumpPower,
