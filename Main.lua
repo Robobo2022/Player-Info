@@ -35,6 +35,7 @@ local CharacterStats = Tab1:CreateSection("Character Stats")
 local Display = Tab1:CreateLabel("Display: ")
 local UserName = Tab1:CreateLabel("User: ")
 local UserId = Tab1:CreateLabel("UserId: ")
+local AccountAge = Tab1:CreateLabel("AccountAge: ")
 local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
@@ -56,6 +57,7 @@ local Input = Tab:CreateInput({
 				Image = 11721661420,
 			})
 
+			AccountAge:Set("AccountAge: Doesn't Exist")
             Display:Set("Display: Doesn't Exist")
             UserName:Set("User: Doesn't Exist")
             UserId:Set("UserId: Doesn't Exist")
@@ -70,6 +72,9 @@ local Input = Tab:CreateInput({
 				Image = 11721661402,
 			})
 
+
+
+			AccountAge:Set("AccountAge: " .. Player[Text].AccountAge)
             UserName:Set("User: " .. PlayerName)
             Display:Set("User: " .. Player[Text].DisplayName)
             UserId:Set("User: " .. Player[Text].UserId)
