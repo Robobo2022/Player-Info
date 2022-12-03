@@ -37,10 +37,11 @@ local CharacterStats = Tab1:CreateSection("Character Stats")
 local Display = Tab1:CreateLabel("Display: ")
 local UserName = Tab1:CreateLabel("User: ")
 local UserId = Tab1:CreateLabel("UserId: ")
-local HumanoidStats = Tab1:CreateSection("Roblox Stats")
+local RobloxStats = Tab1:CreateSection("Roblox Stats")
 local AccountAge = Tab1:CreateLabel("AccountAge: ")
 local Premium = Tab1:CreateLabel("Premium: ")
 local Followers = Tab1:CreateLabel("Followers: ")
+local Country = Tab1:CreateLabel("Country: ")
 local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
@@ -62,6 +63,7 @@ local Input = Tab:CreateInput({
 				Image = 11721661420,
 			})
 			
+			Country:Set("Country: Doesnt Exist")
 			Followers:Set("Followers: Doesnt Exist")
 			Premium:Set("Premium: Doesnt Exist")
 			AccountAge:Set("AccountAge: Doesn't Exist")
@@ -99,7 +101,6 @@ local Input = Tab:CreateInput({
 			WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
 			JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
 			MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)
-
 
 		end
 	end,
