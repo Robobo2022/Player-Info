@@ -1,4 +1,6 @@
+local HS = game:GetService("HttpService")
 local Player = game:GetService("Players")
+local req = http_request or request or (syn and syn.request)
 local PlayerName = Player.Name
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
@@ -35,8 +37,10 @@ local CharacterStats = Tab1:CreateSection("Character Stats")
 local Display = Tab1:CreateLabel("Display: ")
 local UserName = Tab1:CreateLabel("User: ")
 local UserId = Tab1:CreateLabel("UserId: ")
+local HumanoidStats = Tab1:CreateSection("Roblox Stats")
 local AccountAge = Tab1:CreateLabel("AccountAge: ")
 local Premium = Tab1:CreateLabel("Premium: ")
+local Followers = Tab1:CreateLabel("Followers: ")
 local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
@@ -57,7 +61,8 @@ local Input = Tab:CreateInput({
 				Duration = 6.5,
 				Image = 11721661420,
 			})
-
+			
+			Followers:Set("Followers: Doesnt Exist")
 			Premium:Set("Premium: Doesnt Exist")
 			AccountAge:Set("AccountAge: Doesn't Exist")
             Display:Set("Display: Doesn't Exist")
@@ -80,6 +85,13 @@ local Input = Tab:CreateInput({
 				Premium:Set("Premium: False")
 			end
 
+			local response = HS:JSONDecode(
+				req({
+				Url = "https://friends.roblox.com/v1/users/"..Player[Text].UserId.."/followers/count"
+			})
+			.Body)
+
+			Followers:Set("Followers: " .. response.count)
 			AccountAge:Set("AccountAge: " .. Player[Text].AccountAge)
             UserName:Set("User: " .. PlayerName)
             Display:Set("Display: " .. Player[Text].DisplayName)
@@ -87,8 +99,11 @@ local Input = Tab:CreateInput({
 			WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
 			JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
 			MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)
+
+
 		end
 	end,
 })
+
 
 

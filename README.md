@@ -14,8 +14,10 @@ the script is very straight forward, you put the Players UserName (Script Doesn'
 Display,
 Username,
 UserId
+#### Roblox
 AccountAge
 Premium (True/False)
+Follower count
 #### Humanoid
 WalkSpeed,
 JumpPower,
