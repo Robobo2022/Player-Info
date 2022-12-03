@@ -36,6 +36,7 @@ local Display = Tab1:CreateLabel("Display: ")
 local UserName = Tab1:CreateLabel("User: ")
 local UserId = Tab1:CreateLabel("UserId: ")
 local AccountAge = Tab1:CreateLabel("AccountAge: ")
+local Premium = Tab1:CreateLabel("Premium: ")
 local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
@@ -57,6 +58,7 @@ local Input = Tab:CreateInput({
 				Image = 11721661420,
 			})
 
+			Premium:Set("Premium: Doesnt Exist")
 			AccountAge:Set("AccountAge: Doesn't Exist")
             Display:Set("Display: Doesn't Exist")
             UserName:Set("User: Doesn't Exist")
@@ -72,12 +74,16 @@ local Input = Tab:CreateInput({
 				Image = 11721661402,
 			})
 
-
+			if Player[Text].MembershipType == Enum.MembershipType.Premium then
+				Premium:Set("Premium: True")
+			else
+				Premium:Set("Premium: False")
+			end
 
 			AccountAge:Set("AccountAge: " .. Player[Text].AccountAge)
             UserName:Set("User: " .. PlayerName)
-            Display:Set("User: " .. Player[Text].DisplayName)
-            UserId:Set("User: " .. Player[Text].UserId)
+            Display:Set("Display: " .. Player[Text].DisplayName)
+            UserId:Set("UserId: " .. Player[Text].UserId)
 			WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
 			JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
 			MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)

@@ -14,6 +14,8 @@ the script is very straight forward, you put the Players UserName (Script Doesn'
 Display,
 Username,
 UserId
+AccountAge
+Premium (True/False)
 #### Humanoid
 WalkSpeed,
 JumpPower,
