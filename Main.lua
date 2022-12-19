@@ -1,6 +1,6 @@
 local HS = game:GetService("HttpService")
 local Player = game:GetService("Players")
-local req = http_request or request or (syn and syn.request)
+local req = (syn and syn.request or request or http and http.request or http_request)
 local PlayerName = Player.Name
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
