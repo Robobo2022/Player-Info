@@ -30,4 +30,4 @@ Health,
 Position x/y/z (there is a toggle to round up the position number)
 #### Extra
 Teleport to target
-###### Its CaSe sensitive, so it will the player doesn't exist when you put one letter wrong or a capital letter wrong ):
+###### Its CaSe sensitive, so it will Show that the player doesn't exist when you put one letter wrong or a capital letter wrong ):
