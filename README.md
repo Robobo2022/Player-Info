@@ -11,7 +11,7 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/Player-In
 ```
 
 ### How to use?
-the script is very straight forward, you put the Players UserName (Script Doesn't support display name) in the textinput and then switch The Information Tab.
+the script is very straight forward, you put the Players UserName (Script Doesn't support display name) in the textinput and then switch to the Information Tab.
 
 ### What Stats can you see?
 #### Character
