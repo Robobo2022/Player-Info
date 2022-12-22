@@ -1,7 +1,5 @@
 # Player-Info
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=robobo2022&label=Profile%20views&color=0e75b6&style=flat" alt="robobo2022" /> </p>
-
 Player-Info, is a Roblox script that finds the players stats when putting the Users Roblox name in the TextInput.
 
 ```lua
