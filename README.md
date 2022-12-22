@@ -3,6 +3,10 @@
 Player-Info, is a Roblox script that finds the players stats when putting the Users Roblox name in the TextInput.
 
 ```lua
+--to make the script even less detected
+getgenv().SecureMode = true
+```
+```lua
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/Player-Info/main/Main.lua"), true))()
 ```
 
