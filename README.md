@@ -19,14 +19,14 @@ Display,
 Username,
 UserId
 #### Roblox
-AccountAge
-Premium (True/False)
-Follower count
+AccountAge,
+Premium (True/False),
+Follower count,
 #### Humanoid
 WalkSpeed,
 JumpPower,
-MaxHealth
-Health
+MaxHealth,
+Health,
 Position x/y/z (there is a toggle to round up the position number)
 #### Extra
 Teleport to target
