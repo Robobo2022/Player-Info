@@ -41,7 +41,6 @@ local RobloxStats = Tab1:CreateSection("Roblox Stats")
 local AccountAge = Tab1:CreateLabel("AccountAge: ")
 local Premium = Tab1:CreateLabel("Premium: ")
 local Followers = Tab1:CreateLabel("Followers: ")
-local Country = Tab1:CreateLabel("Country: ")
 local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
@@ -63,7 +62,6 @@ local Input = Tab:CreateInput({
 				Image = 11721661420,
 			})
 			
-			Country:Set("Country: Doesnt Exist")
 			Followers:Set("Followers: Doesnt Exist")
 			Premium:Set("Premium: Doesnt Exist")
 			AccountAge:Set("AccountAge: Doesn't Exist")
