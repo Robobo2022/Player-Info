@@ -120,6 +120,23 @@ local Input = Tab:CreateInput({
 			PosX:Set("Position.X: Error")
 			PosY:Set("Position.Y: Error")
 			PosZ:Set("Position.Z: Error")
+
+			game.Players.ChildRemoved:Connect(function(Text)
+				Followers:Set("Followers: Error")
+				Premium:Set("Premium: Error")
+				AccountAge:Set("AccountAge: Error")
+				Display:Set("Display: Error")
+				UserName:Set("User: Error")
+				UserId:Set("UserId: Error")
+				WalkSpeed:Set("WalkSpeed: Error")
+				JumpPower:Set("JumpPower: Error")
+				MaxHealth:Set("MaxHealth: Error")
+				Health:Set("Health: Error")
+				PosX:Set("Position.X: Error")
+				PosY:Set("Position.Y: Error")
+				PosZ:Set("Position.Z: Error")
+			end)
+
 		else
 			Rayfield:Notify({
 				Title = "Player Chosen",
@@ -164,5 +181,4 @@ local Input = Tab:CreateInput({
 		end
 	end,
 })
-	 
 
