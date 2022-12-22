@@ -1,7 +1,11 @@
 local HS = game:GetService("HttpService")
 local Player = game:GetService("Players")
 local req = (syn and syn.request or request or http and http.request or http_request)
+if not req then
+	error("Your executor cant use the http request function, please use a different executor. the request function is used to get the player Follower count.")
+end
 local PlayerName = Player.Name
+
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
@@ -66,6 +70,15 @@ local Toggle = Tab:CreateToggle({
 local Button = Tab:CreateButton({
 	Name = "Teleport to Target",
 	Callback = function()
+		if PlayerName == Player.LocalPlayer.Name then
+			Rayfield:Notify({
+				Title = "You cant teleport to yourself",
+				Content = "Player Name: " .. PlayerName,
+				Duration = 6.5,
+				Image = 11721661420,
+			})
+			return
+		end
 		Player.LocalPlayer.Character.HumanoidRootPart.CFrame = Player[PlayerName].Character.HumanoidRootPart.CFrame
 	end,
 })	
@@ -76,7 +89,7 @@ local Input = Tab:CreateInput({
 	RemoveTextAfterFocusLost = false,
 	Callback = function(Text)
 		PlayerName = Text
-
+	
 		if not Player:FindFirstChild(Text) then
 			Rayfield:Notify({
 				Title = "Player Chosen Doesn't Exist",
@@ -98,7 +111,6 @@ local Input = Tab:CreateInput({
 			PosX:Set("Position.X: Doesn't Exist")
 			PosY:Set("Position.Y: Doesn't Exist")
 			PosZ:Set("Position.Z: Doesn't Exist")
-
 		else
 			Rayfield:Notify({
 				Title = "Player Chosen",
