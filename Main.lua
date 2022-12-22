@@ -79,6 +79,15 @@ local Button = Tab:CreateButton({
 			})
 			return
 		end
+		if not Player:FindFirstChild(PlayerName) then
+			Rayfield:Notify({
+				Title = "Cant Teleport to Player",
+				Content = "Player: " .. PlayerName .. "Doesn't Exist",
+				Duration = 6.5,
+				Image = 11721661420,
+			})
+			return
+		end
 		Player.LocalPlayer.Character.HumanoidRootPart.CFrame = Player[PlayerName].Character.HumanoidRootPart.CFrame
 	end,
 })	
