@@ -60,6 +60,14 @@ local Toggle = Tab:CreateToggle({
 		 round = Value
 	end,
  })
+
+local Button = Tab:CreateButton({
+	Name = "Teleport to Target",
+	Callback = function()
+		Player.LocalPlayer.Character.HumanoidRootPart.CFrame = Player[PlayerName].Character.HumanoidRootPart.CFrame
+	end,
+})	
+
 local Input = Tab:CreateInput({
 	Name = "Player Name",
 	PlaceholderText = "Player Name",
@@ -109,6 +117,7 @@ local Input = Tab:CreateInput({
 			.Body)
 
 			while true do task.wait()
+				Button:Set("Teleport to " .. PlayerName)
 				Followers:Set("Followers: " .. response.count)
 				AccountAge:Set("AccountAge: " .. Player[Text].AccountAge)
 				UserName:Set("User: " .. PlayerName)
@@ -129,6 +138,5 @@ local Input = Tab:CreateInput({
 		end
 	end,
 })
-
-
+	 
 
