@@ -23,7 +23,7 @@ WalkSpeed,
 JumpPower,
 MaxHealth
 Health
-Position x/y (there is a toggle to round up the position number)
+Position x/y/z (there is a toggle to round up the position number)
 
 #### Extra
 Teleport to target

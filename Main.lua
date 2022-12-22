@@ -49,8 +49,10 @@ local JumpPower = Tab1:CreateLabel("JumpPower: ")
 local MaxHealth = Tab1:CreateLabel("MaxHealth: ")
 local Health = Tab1:CreateLabel("Health: ")
 
+local pos = Tab1:CreateSection("Player Position")
 local PosX = Tab1:CreateLabel("Position.X: ")
 local PosY = Tab1:CreateLabel("Position.Y: ")
+local PosZ = Tab1:CreateLabel("Position.Z: ")
 
 local Toggle = Tab:CreateToggle({
 	Name = "Round Position number",
@@ -95,6 +97,7 @@ local Input = Tab:CreateInput({
 			Health:Set("Health: Doesn't Exist")
 			PosX:Set("Position.X: Doesn't Exist")
 			PosY:Set("Position.Y: Doesn't Exist")
+			PosZ:Set("Position.Z: Doesn't Exist")
 
 		else
 			Rayfield:Notify({
@@ -130,9 +133,11 @@ local Input = Tab:CreateInput({
 				if round == true then
 					PosX:Set("Position.X: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.X))
 					PosY:Set("Position.Y: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.Y))
+					PosZ:Set("Position.Z: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.Z))
 				else
 					PosX:Set("Position.X: " .. Player[Text].Character.HumanoidRootPart.Position.X)
 					PosY:Set("Position.Y: " .. Player[Text].Character.HumanoidRootPart.Position.Y)
+					PosZ:Set("Position.Z: " .. Player[Text].Character.HumanoidRootPart.Position.Z)
 				end
 			end
 		end
