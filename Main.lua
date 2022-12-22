@@ -30,6 +30,8 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
+getgenv().round = false
+
 local Tab = Window:CreateTab("Player", 11721661401)
 local Tab1 = Window:CreateTab("Information", 11721661401)
 
@@ -50,7 +52,14 @@ local Health = Tab1:CreateLabel("Health: ")
 local PosX = Tab1:CreateLabel("Position.X: ")
 local PosY = Tab1:CreateLabel("Position.Y: ")
 
-
+local Toggle = Tab:CreateToggle({
+	Name = "Round Position number",
+	CurrentValue = false,
+	Flag = "Toggle1",
+	Callback = function(Value)
+		 round = Value
+	end,
+ })
 local Input = Tab:CreateInput({
 	Name = "Player Name",
 	PlaceholderText = "Player Name",
@@ -99,18 +108,24 @@ local Input = Tab:CreateInput({
 			})
 			.Body)
 
-			Followers:Set("Followers: " .. response.count)
-			AccountAge:Set("AccountAge: " .. Player[Text].AccountAge)
-            UserName:Set("User: " .. PlayerName)
-            Display:Set("Display: " .. Player[Text].DisplayName)
-            UserId:Set("UserId: " .. Player[Text].UserId)
-			WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
-			JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
-			MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)
-			Health:Set("MaxHealth: " .. Player[Text].Character.Humanoid.Health)
-			PosX:Set("Position.X: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.X))
-			PosY:Set("Position.Y: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.Y))
-
+			while true do task.wait()
+				Followers:Set("Followers: " .. response.count)
+				AccountAge:Set("AccountAge: " .. Player[Text].AccountAge)
+				UserName:Set("User: " .. PlayerName)
+				Display:Set("Display: " .. Player[Text].DisplayName)
+				UserId:Set("UserId: " .. Player[Text].UserId)
+				WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
+				JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
+				MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)
+				Health:Set("Health: " .. Player[Text].Character.Humanoid.Health)
+				if round == true then
+					PosX:Set("Position.X: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.X))
+					PosY:Set("Position.Y: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.Y))
+				else
+					PosX:Set("Position.X: " .. Player[Text].Character.HumanoidRootPart.Position.X)
+					PosY:Set("Position.Y: " .. Player[Text].Character.HumanoidRootPart.Position.Y)
+				end
+			end
 		end
 	end,
 })
