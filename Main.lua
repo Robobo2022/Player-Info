@@ -45,6 +45,10 @@ local HumanoidStats = Tab1:CreateSection("Humanoid Stats")
 local WalkSpeed = Tab1:CreateLabel("WalkSpeed: ")
 local JumpPower = Tab1:CreateLabel("JumpPower: ")
 local MaxHealth = Tab1:CreateLabel("MaxHealth: ")
+local Health = Tab1:CreateLabel("Health: ")
+
+local PosX = Tab1:CreateLabel("Position.X: ")
+local PosY = Tab1:CreateLabel("Position.Y: ")
 
 
 local Input = Tab:CreateInput({
@@ -71,6 +75,10 @@ local Input = Tab:CreateInput({
 			WalkSpeed:Set("WalkSpeed: Doesn't Exist")
 			JumpPower:Set("JumpPower: Doesn't Exist")
 			MaxHealth:Set("MaxHealth: Doesn't Exist")
+			Health:Set("Health: Doesn't Exist")
+			PosX:Set("Position.X: Doesn't Exist")
+			PosY:Set("Position.Y: Doesn't Exist")
+
 		else
 			Rayfield:Notify({
 				Title = "Player Chosen",
@@ -99,6 +107,9 @@ local Input = Tab:CreateInput({
 			WalkSpeed:Set("WalkSpeed: " .. Player[Text].Character.Humanoid.WalkSpeed)
 			JumpPower:Set("JumpPower: " .. Player[Text].Character.Humanoid.JumpPower)
 			MaxHealth:Set("MaxHealth: " .. Player[Text].Character.Humanoid.MaxHealth)
+			Health:Set("MaxHealth: " .. Player[Text].Character.Humanoid.Health)
+			PosX:Set("Position.X: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.X))
+			PosY:Set("Position.Y: " .. math.floor(Player[Text].Character.HumanoidRootPart.Position.Y))
 
 		end
 	end,
