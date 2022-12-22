@@ -82,7 +82,7 @@ local Button = Tab:CreateButton({
 		if not Player:FindFirstChild(PlayerName) then
 			Rayfield:Notify({
 				Title = "Cant Teleport to Player",
-				Content = "Player: " .. PlayerName .. "Doesn't Exist",
+				Content = "Player: " .. PlayerName .. "Doesnt Exist",
 				Duration = 6.5,
 				Image = 11721661420,
 			})
@@ -101,25 +101,25 @@ local Input = Tab:CreateInput({
 	
 		if not Player:FindFirstChild(Text) then
 			Rayfield:Notify({
-				Title = "Player Chosen Doesn't Exist",
+				Title = "Player Chosen Doesnt Exist",
 				Content = "Player Name: " .. PlayerName,
 				Duration = 6.5,
 				Image = 11721661420,
 			})
 			
-			Followers:Set("Followers: Doesnt Exist")
-			Premium:Set("Premium: Doesnt Exist")
-			AccountAge:Set("AccountAge: Doesn't Exist")
-            Display:Set("Display: Doesn't Exist")
-            UserName:Set("User: Doesn't Exist")
-            UserId:Set("UserId: Doesn't Exist")
-			WalkSpeed:Set("WalkSpeed: Doesn't Exist")
-			JumpPower:Set("JumpPower: Doesn't Exist")
-			MaxHealth:Set("MaxHealth: Doesn't Exist")
-			Health:Set("Health: Doesn't Exist")
-			PosX:Set("Position.X: Doesn't Exist")
-			PosY:Set("Position.Y: Doesn't Exist")
-			PosZ:Set("Position.Z: Doesn't Exist")
+			Followers:Set("Followers: Error")
+			Premium:Set("Premium: Error")
+			AccountAge:Set("AccountAge: Error")
+            Display:Set("Display: Error")
+            UserName:Set("User: Error")
+            UserId:Set("UserId: Error")
+			WalkSpeed:Set("WalkSpeed: Error")
+			JumpPower:Set("JumpPower: Error")
+			MaxHealth:Set("MaxHealth: Error")
+			Health:Set("Health: Error")
+			PosX:Set("Position.X: Error")
+			PosY:Set("Position.Y: Error")
+			PosZ:Set("Position.Z: Error")
 		else
 			Rayfield:Notify({
 				Title = "Player Chosen",
