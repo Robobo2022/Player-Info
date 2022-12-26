@@ -78,14 +78,6 @@ task.spawn(function()
 	end
 end)
 
-local Toggle = Tab:CreateToggle({
-	Name = "Loop Teleport to :" ..PlayerName,
-	CurrentValue = false,
-	Flag = "Toggle1",
-	Callback = function(Value)
-		LoopTeleport = Value
-	end,
-})
 
 local Button = Tab:CreateButton({
 	Name = "Teleport to Target",
@@ -112,6 +104,32 @@ local Button = Tab:CreateButton({
 	end,
 })	
 
+local Toggle1 = Tab:CreateToggle({
+	Name = "Loop Teleport",
+	CurrentValue = false,
+	Flag = "Toggle1",
+	Callback = function(Value)
+		if PlayerName == Player.LocalPlayer.Name then
+			Rayfield:Notify({
+				Title = "You cant teleport to yourself",
+				Content = "Player Name: " .. PlayerName,
+				Duration = 6.5,
+				Image = 11721661420,
+			})
+			return
+		end
+		if not Player:FindFirstChild(PlayerName) then
+			Rayfield:Notify({
+				Title = "Cant Teleport to Player",
+				Content = "Player: " .. PlayerName .. "Doesnt Exist",
+				Duration = 6.5,
+				Image = 11721661420,
+			})
+			return
+		end
+		LoopTeleport = Value
+	end,
+})
 
 local Input = Tab:CreateInput({
 	Name = "Player Name",
