@@ -5,6 +5,8 @@ if not req then
 	error("Your executor cant use the http request function, please use a different executor. the request function is used to get the player Follower count.")
 end
 local PlayerName = Player.Name
+getgenv().LoopTeleport = false
+
 
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
@@ -67,6 +69,24 @@ local Toggle = Tab:CreateToggle({
 	end,
  })
 
+
+task.spawn(function()
+	while task.wait() do
+		if getgenv().LoopTeleport == true then
+			Player.LocalPlayer.Character.HumanoidRootPart.CFrame = Player[PlayerName].Character.HumanoidRootPart.CFrame
+		end
+	end
+end)
+
+local Toggle = Tab:CreateToggle({
+	Name = "Loop Teleport to :" ..PlayerName,
+	CurrentValue = false,
+	Flag = "Toggle1",
+	Callback = function(Value)
+		LoopTeleport = Value
+	end,
+})
+
 local Button = Tab:CreateButton({
 	Name = "Teleport to Target",
 	Callback = function()
@@ -91,6 +111,7 @@ local Button = Tab:CreateButton({
 		Player.LocalPlayer.Character.HumanoidRootPart.CFrame = Player[PlayerName].Character.HumanoidRootPart.CFrame
 	end,
 })	
+
 
 local Input = Tab:CreateInput({
 	Name = "Player Name",
